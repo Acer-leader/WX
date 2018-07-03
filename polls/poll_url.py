@@ -5,7 +5,7 @@
 # Date  : 2018/6/29
 # Desc  :
 
-from django.contrib import admin
+#from django.contrib import admin
 from django.urls import path,include
 from . import views
 
