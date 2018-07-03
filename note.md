@@ -57,5 +57,37 @@
         poll = models .ForeignKey(Poll,on_delete=models.CASCADE)
         #Django2.0一定要把 on_delete=models.CASCADE 这个参数加上 不然报错
         
+- Django-sqlmigrate命令接收一个迁移的名称
+        
+         python manage.py sqlmigrate polls 0001
+         #会成为可读的创建数据表的模式
 
+- 检查项目中出现的问题 
 
+        python manage.py check
+        
+- 改变模型/model需要这三步：
+        
+        编辑 models.py 文件，改变模型。
+        运行 python manage.py makemigrations 为模型的改变生成迁移文件。
+        运行 python manage.py migrate 来应用数据库迁移。                      
+- API 交互式的Python的命令行
+    
+        python manage.py shell
+        #继续以下命令
+        
+        类似命令
+        from polls.models import Choice, Question
+        Question.objects.all()
+        from django.utils import timezone
+        q = Question(question_text="What's new?", pub_date=timezone.now())
+        q.save()
+        q.id
+        q.question_text  等等
+-  Django的管理页面
+ 
+        python manage.py createsuperuser
+        #创建超级管理员
+        这里设置的密码是  admin ---- root123456  
+-  
+        
