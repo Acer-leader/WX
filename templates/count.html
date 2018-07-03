@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<a href="..">回到主页</a>
+</body>
+<h2>统计字数:{{ count }}</h2>
+<h3>文本:{{ text }}</h3>
+<br>
+出现频率：
+<br>
+{% for word,count1 in sorted %}
+    {{ word }} - {{ count1 }}
+    <br>
+{% endfor %}
+
+</body>
+</html>
