@@ -95,11 +95,14 @@
          在当下的url路由加上app_name=''即可，在html使用空间命名的时候只需要
          {%  url '<name>:<name>' %}
          
-#轻轻松松看张美女  链接速度太慢看不到美女
+# 轻轻松松看张美女  链接速度太慢看不到美女
+
 ![image](https://github.com/then-on/WX/blob/master/Pic/1.jpg?raw=true) 
 ![image](https://github.com/then-on/WX/blob/master/Pic/2.jpg?raw=true)
 
       
 - 简单的表格 
+
+        
 
 
