@@ -4,7 +4,6 @@ from django.template import loader
 from .models import Question
 
 # Create your views here.
-
 #这是用来实验的
 def do_wang(request):
     #print('这是主页知道吗')
@@ -36,8 +35,16 @@ def index(request):
     'latest_question_list' : latest_question_list
     }
     return HttpResponse(template.render(context,request))
+
+from django.http import Http404
+# '''
 def detail(request,question_id):
-    return HttpResponse("You are looking at question %s." % question_id)
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404('Question does not exist')
+    return render(request,'polls/detail.html',{'question':question})
+    #return HttpResponse("You are looking at question %s." % question_id)
 def result(request,question_id):
     response = "You are looking at the results of question %s."
     return HttpResponse(response % question_id)

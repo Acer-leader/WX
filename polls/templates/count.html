@@ -5,7 +5,7 @@
     <title></title>
 </head>
 <body>
-<a href="..">回到主页</a>
+<a href="{% url 'polls:home' %} ">回到主页</a>
 </body>
 <h2>统计字数:{{ count }}</h2>
 <h3>文本:{{ text }}</h3>

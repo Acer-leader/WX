@@ -89,5 +89,14 @@
         python manage.py createsuperuser
         #创建超级管理员
         这里设置的密码是  admin ---- root123456  
--  
-        
+- Django的命名空间
+    
+         在当下的url路由加上app_name=''即可，在html使用空间命名的时候只需要
+         {%  url '<name>:<name>' %}
+         
+#轻轻松松看张美女
+![](Pic\1.jpg)![](Pic\2.jpg)
+      
+
+
+

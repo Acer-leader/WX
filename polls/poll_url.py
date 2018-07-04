@@ -8,17 +8,15 @@
 #from django.contrib import admin
 from django.urls import path,include
 from . import views
-
-
+app_name = 'polls'
 urlpatterns = [
-
     path('liuyintao/',views.do_app),
     path('wang/',views.do_wang),
-    path('home/',views.do_home),
+    path('home/',views.do_home,name='home'),
     #计算字数url
-    path('home/count/',views.do_count),
+    path('home/count/',views.do_count,name='count'),
     #返回主页 url
-    path('home/double/',views.do_double),
+    path('double/',views.do_double,name='double'),
     # ex: /polls/
     path('',views.index,name='index'),
     #ex: /pools/5/
@@ -27,5 +25,4 @@ urlpatterns = [
     path('<int:question_id>/results',views.result,name='result'),
     #ex:ex: /polls/5/vote/
     path('<int:question_id>/vote/',views.vote,name='vote'),
-
 ]
