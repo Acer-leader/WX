@@ -95,7 +95,9 @@
          {%  url '<name>:<name>' %}
          
 #轻轻松松看张美女
-![](Pic\1.jpg) ![](Pic\2.jpg)
+![image](https://github.com/then-on/WX/blob/master/Pic/1.jpg?raw=true) 
+![image](https://github.com/then-on/WX/blob/master/Pic/2.jpg?raw=true)
+
       
 
 
