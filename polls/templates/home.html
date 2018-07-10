@@ -5,8 +5,10 @@
     <title></title>
 </head>
 <body>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 <h2>Hello World 字数统计</h2>
-<form action="count">
+<form action="{% url 'polls:count' %}">
     <textarea cols="100" rows="50" name="text">在此处输入文字</textarea><br>
     <input type="submit" value="统计">
 </form>

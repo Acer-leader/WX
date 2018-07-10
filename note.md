@@ -101,10 +101,47 @@
 ![image](https://github.com/then-on/WX/blob/master/Pic/2.jpg?raw=true)
 
       
-- 简单的表格 
+- 测试 BUG
         
-      你好
+        一般在app页面下的tests.py 文件当中，命令是
+        python manage.py test polls
         
-        
+- 后台的制作
 
+         后面选项用这些代码表示 
+         from .models import Question, Choice
+         from django.contrib import admin
+        # class ChoiceInline(admin.StackedInline):
+        #     model = Choice
+        #     extra = 3
+        class ChoiceInline(admin.TabularInline):
+            model = Choice
+            extra = 0
+        class QuestionAdmin(admin.ModelAdmin):
+            fieldsets = [
+                (None, {'fields': ['question_text']}),
+                ('Date information', {'fields': ['pub_date']}),
+            ]
+            inlines = [ChoiceInline]
+        admin.site.register(Question,QuestionAdmin)
+        
+        #extra = 3  表示的是 choice 后面的选项是3个字段
+        通过 TabularInline``（替代 ``StackedInline ），关联对象以一种表格式的方式展示，显得更加紧凑：
+        
+- 过滤器
 
+        过滤器，使用 list_filter。将以下代码添加至 QuestionAdmin：  
+        list_filter = ['pub_date']           
+        #根据 pub_date 这个时间来进行来查找 。这样做添加了一个“过滤器”侧边栏，允许人们以 pub_date 字段来过滤列表：
+         
+- 搜索框
+        
+        在列表的顶部增加一个搜索框。当输入待搜项时，Django 将搜索 question_text 字段。
+        你可以使用任意多的字段——由于后台使用 LIKE 来查询数据，
+        将待搜索的字段数限制为一个不会出问题大小，会便于数据库进行查询操作。
+        admin/search_fields = ['question_text']
+
+- 查看Django的源文件
+
+        如果你不知道 Django 源码在你系统的哪个位置，运行以下命令：
+        $ python -c "import django; print(django.__path__)"
