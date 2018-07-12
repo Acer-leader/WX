@@ -234,7 +234,7 @@
                 recursive-include docs *
                 recursive-include docs *
         
-        8.试着构建你自己的应用包通过 ptyhon setup.py sdist （在 django-polls``目录内）。这将创建一个名为 ``dist 的目录并构建你自己的应用包， 
+        8.试着构建你自己的应用包通过 python setup.py sdist （在 django-polls``目录内）。这将创建一个名为 ``dist 的目录并构建你自己的应用包， 
           django-polls-0.1.tar.gz。       
           提示：进入该文件目录下在运行该命令 
                  
